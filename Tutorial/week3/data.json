@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "full name": "kraneel manandhar",
+      "email": "acbhcbiajcca@gmail.com",
+      "phone": 987654321,
+      "address": "gongabu",
+      "role": "student",
+      "bio": "it student passionate about backend development, automation, and system design. always learning and exploring new technologies.",
+      "twitter": "https://twitter.com/kraneel",
+      "linkedin": "https://linkedin.com/in/kraneel-manandhar",
+      "github": "https://github.com/kraneelmanandhar"
+    },
+    {
+      "id": "2",
+      "full name": "aarav shrestha",
+      "email": "aarav.shrestha@example.com",
+      "phone": 9812345678,
+      "address": "lalitpur",
+      "role": "student",
+      "bio": "passionate learner exploring software development and cloud computing.",
+      "twitter": "https://twitter.com/aarav_dev",
+      "linkedin": "https://linkedin.com/in/aarav-shrestha",
+      "github": "https://github.com/aaravcodes"
+    },
+    {
+      "id": "3",
+      "full name": "sarina kc",
+      "email": "sarina.kc@example.com",
+      "phone": 9801122334,
+      "address": "bhaktapur",
+      "role": "intern",
+      "bio": "tech enthusiast focused on backend development and automation.",
+      "twitter": "https://twitter.com/sarina_tech",
+      "linkedin": "https://linkedin.com/in/sarina-kc",
+      "github": "https://github.com/sarinakc"
+    }
+  ]
+}
