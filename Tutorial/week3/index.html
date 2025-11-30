@@ -79,14 +79,17 @@
   <div class="users-container">
     <!-- Example user cards -->
     <div class="user-card" onclick="openUserPage(1)">
+      <img src="https://via.placeholder.com/80" alt="User 1">
       <h3>Alice Johnson</h3>
       <p>alice@example.com</p>
     </div>
     <div class="user-card" onclick="openUserPage(2)">
+      <img src="https://via.placeholder.com/80" alt="User 2">
       <h3>Bob Smith</h3>
       <p>bob@example.com</p>
     </div>
     <div class="user-card" onclick="openUserPage(3)">
+      <img src="https://via.placeholder.com/80" alt="User 3">
       <h3>Charlie Brown</h3>
       <p>charlie@example.com</p>
     </div>
@@ -98,49 +101,29 @@
       window.location.href = `user.html?id=${userId}`;
     }
 
-    // function getUsers(){
-    //   fetch('http://localhost:3000/user')
-    //   .then(function(response){console.log(response.json)})
-    //   .then(function(data) {
-    //     let content = 
-    //     data.forEach(function(user){
-    //       console.log(user);
-    //       content += `<div class="user-card" onclick="openUserPage(1)">
-    //     <h3>${user.name}</h3>
-    //     <p>${user.email}</p>
-    //   </div>`
-    //   })  
-    //   })
 
-    //   document.querySelector('.users-container').innerHTML = content
+    function getUsers(){
+      fetch('http://localhost:3000/user')
+      .then(function(response){
+        return response.json()
+      })
+      .then(function(data){
+        let content = ''
+        data.forEach(function(user){
+          console.log(user)
+          content += ` 
+          <div class="user-card" onclick="openUserPage('${user.id}')">
+          <h3>${user.name}</h3>
+          <p>${user.email}</p>
+          </div>`
+        })
+      document.querySelector('.users-container').innerHTML = content
+      })
+      .catch()
 
-    //   .catch()
-    // }
+    }
 
-
-    //   getUsers();
-function getUsers() {
-  fetch('http://localhost:3000/user')
-    .then(response => response.json())   // FIX: convert to JSON
-    .then(data => {
-      let content = "";                  // FIX: initialize properly
-
-      data.forEach(user => {
-        content += `
-          <div class="user-card" onclick="openUserPage(${user.id})">
-            <h3>${user.name || user["full name"]}</h3>
-            <p>${user.email}</p>
-          </div>`;
-      });
-
-      document.querySelector('.users-container').innerHTML = content; // FIX: update inside .then()
-    })
-    .catch(error => console.error("Error:", error)); // FIX: proper catch
-}
-
-getUsers();
-
-
+    getUsers()
   </script>
 </body>
 </html>
