@@ -2,7 +2,7 @@
   "user": [
     {
       "id": "1",
-      "full name": "kraneel manandhar",
+      "name": "kraneel manandhar",
       "email": "acbhcbiajcca@gmail.com",
       "phone": 987654321,
       "address": "gongabu",
@@ -14,7 +14,7 @@
     },
     {
       "id": "2",
-      "full name": "aarav shrestha",
+      "name": "aarav shrestha",
       "email": "aarav.shrestha@example.com",
       "phone": 9812345678,
       "address": "lalitpur",
@@ -26,7 +26,7 @@
     },
     {
       "id": "3",
-      "full name": "sarina kc",
+      "name": "sarina kc",
       "email": "sarina.kc@example.com",
       "phone": 9801122334,
       "address": "bhaktapur",
@@ -35,6 +35,30 @@
       "twitter": "https://twitter.com/sarina_tech",
       "linkedin": "https://linkedin.com/in/sarina-kc",
       "github": "https://github.com/sarinakc"
+    },
+    {
+      "id": "a378",
+      "name": "yokozo",
+      "email": "mydarling3547@heraldcollege.edu.np",
+      "phone": "1234567890",
+      "address": "jckncjndckkjnc",
+      "role": "jbckdnkzxnlxnckdcd",
+      "bio": "hgsdcbphowiuurvhebfnspmdochdazxjk",
+      "twitter": "baoaciubcjhbknxnkjbsckjdnc",
+      "linkedin": "jdbckbciejknckds",
+      "github": "dckjdbcoekama"
+    },
+    {
+      "id": "0381",
+      "name": "yokozo",
+      "email": "mydarling3547@heraldcollege.edu.np",
+      "phone": "1234567890",
+      "address": "jckncjndckkjnc",
+      "role": "jbckdnkzxnlxnckdcd",
+      "bio": "hgsdcbphowiuurvhebfnspmdochdazxjk",
+      "twitter": "baoaciubcjhbknxnkjbsckjdnc",
+      "linkedin": "jdbckbciejknckds",
+      "github": "dckjdbcoekama"
     }
   ]
 }
