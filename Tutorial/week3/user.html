@@ -68,23 +68,6 @@
   </style>
 </head>
 <body>
-  <div class="user-detail">
-    <div class="user-info">
-      <h2 id="userName">User Name</h2>
-      <p id="userEmail">user@example.com</p>
-      <p id="userPhone">+1 (555) 123-4567</p>
-      <p id="userAddress">123 Main Street, Springfield</p>
-      <p id="userRole">Frontend Developer</p>
-      <p class="bio" id="userBio">Passionate about building clean UI and improving user experience.</p>
-      <div class="social-links">
-        <a id="userTwitter" href="#">Twitter</a>
-        <a id="userLinkedIn" href="#">LinkedIn</a>
-        <a id="userGithub" href="#">GitHub</a>
-      </div>
-    </div>
-    <a href="index.html" class="back-btn">← Back to Users</a>
-  </div>
-
   <script>
     // Get user ID from query string
     const params = new URLSearchParams(window.location.search);
@@ -93,29 +76,30 @@
     fetch(`http://localhost:3000/user/${userId}`)
     .then(response => response.json())
     .then((data) => {
-      console.log(data)
+        console.log(data)
+        let content = `
+    <div class="user-detail">
+      <div class="user-info">
+        <h2 id="userName">${data.name}</h2>
+        <p id="userEmail">${data.email}</p>
+        <p id="userPhone">+977 ${data.phone}</p>
+        <p id="userAddress">${data.address}</p>
+        <p id="userRole">${data.role}</p>
+        <p class="bio" id="userBio">${data.bio}</p>
+        <div class="social-links">
+          <a id="userTwitter" href="#">Twitter</a>
+          <a id="userLinkedIn" href="#">LinkedIn</a>
+          <a id="userGithub" href="#">GitHub</a>
+        </div>
+      </div>
+      <a href="index.html" class="back-btn">← Back to Users</a>
+    </div>`
+    document.body.innerHTML = content;
     })
 
-    let content = `
-  <div class="user-detail">
-    <img src="https://via.placeholder.com/150" alt="User">
-    <div class="user-info">
-      <h2 id="userName"></h2>
-      <p id="userEmail">user@example.com</p>
-      <p id="userPhone">+1 (555) 123-4567</p>
-      <p id="userAddress">123 Main Street, Springfield</p>
-      <p id="userRole">Frontend Developer</p>
-      <p class="bio" id="userBio">Passionate about building clean UI and improving user experience.</p>
-      <div class="social-links">
-        <a id="userTwitter" href="#">Twitter</a>
-        <a id="userLinkedIn" href="#">LinkedIn</a>
-        <a id="userGithub" href="#">GitHub</a>
-      </div>
-    </div>
-    <a href="index.html" class="back-btn">← Back to Users</a>
-  </div>`
+    
 
-  document.body = content;
+  
 
   </script>
 </body>
