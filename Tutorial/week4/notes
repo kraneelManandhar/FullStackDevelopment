@@ -1,0 +1,17 @@
+$name = $_POST["name"]
+
+empty($name)
+
+
+$password = password_hash($password,PASSWORD_DEFAULT)
+
+strlen(variable to check length)
+
+
+json_encode()
+
+
+json_decode()
+
+
+$_SERVER
