@@ -1,5 +1,7 @@
+</main>
+
 <footer>
-	    <p>&copy; <?php 2025; ?> Student Portfolio Management System</p>
+	    <p>&copy; 2025 Student Portfolio Management System</p>
 	</footer>
 
 

@@ -1,9 +1,19 @@
 <?php 
+include "../includes/header.php";
 
-include '../includes/header.php'; 
+$filePath = "../data/students.txt";
 
-echo file_get_contents("../data/students.txt");
+if (!file_exists($filePath)) {
+    echo "<p>No students found.</p>";
+    include '../includes/footer.php';
+    exit;
+}
 
-include '../includes/footer.php'
+$lines = file($filePath);
+foreach ($lines as $line) {
+    echo $line . "<br>";
+}
+
+include "../includes/footer.php";
 ?>
 

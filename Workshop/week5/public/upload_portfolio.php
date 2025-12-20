@@ -9,27 +9,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['fileupload'])) {
             throw new Exception("File upload error.");
         }
 
-        // Allowed file types
         $allowedTypes = ['application/pdf', 'image/jpeg', 'image/png'];
 
         if (!in_array($file['type'], $allowedTypes)) {
             throw new Exception("Invalid file type.");
         }
 
-        // Create uploads folder if not exists
+        $maxSize = 2 * 1024 * 1024; 
+        if ($file['size'] > $maxSize) {
+            throw new Exception("File size must be 2MB or less.");
+        }
+
         $uploadDir = "../uploads/";
         if (!is_dir($uploadDir)) {
             mkdir($uploadDir, 0777, true);
         }
 
-        // Secure file name
-        $fileName = time() . "_" . basename($file['name']);
-        $destination = $uploadDir . $fileName;
+        $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+        $originalName = pathinfo($file['name'], PATHINFO_FILENAME);
+        $cleanName = preg_replace("/[^a-zA-Z0-9_-]/", "", $originalName);
+        $fileName = $cleanName . "_" . time() . "." . $ext;
 
-        // Move uploaded file
-        if (!move_uploaded_file($file['tmp_name'], $destination)) {
-            throw new Exception("Failed to save file.");
-        }
+        $destination = $uploadDir . $fileName;
+        move_uploaded_file($file['tmp_name'], $destination);
 
         $message = "Portfolio uploaded successfully!";
     } catch (Exception $e) {

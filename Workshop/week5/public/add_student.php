@@ -1,16 +1,13 @@
 <?php
-// Initialize variables
 $errors = [];
 $success = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     try {
-        // 1. Get and trim input
-        $name   = trim($_POST["name"] ?? "");
-        $email  = trim($_POST["email"] ?? "");
-        $skills = trim($_POST["skills"] ?? "");
-
-        // 2. Validation using string functions
+        $name   = trim($_POST["name"]);
+        $email  = trim($_POST["email"]);
+        $skills = trim($_POST["skills"]);
+        
         if (empty($name)) {
             $errors[] = "Name is required.";
         }
@@ -23,31 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $errors[] = "Skills are required.";
         }
 
-        // Stop execution if validation fails
         if (!empty($errors)) {
             throw new Exception("Validation failed.");
         }
 
-        // 3. Convert skills string into array
         $skillsArray = explode(",", $skills);
-        $skillsArray = array_map("trim", $skillsArray); // remove extra spaces
+        $skillsArray = array_map("trim", $skillsArray);
 
-        // Convert skills array back to string for storage
-        $skillsString = implode(" | ", $skillsArray);
 
-        // 4. Save student info into students.txt
+        $skillsString = implode(" , ", $skillsArray);
+
         $file = fopen("../data/students.txt", "a");
         if (!$file) {
             throw new Exception("Unable to open file.");
         }
-
+        
         $record = "Name: $name, Email: $email, Skills: $skillsString" . PHP_EOL;
         fwrite($file, $record);
         fclose($file);
 
         $success = "Student added successfully!";
+
     } catch (Exception $e) {
-        // 5. Error handling
         if (empty($errors)) {
             $errors[] = $e->getMessage();
         }
@@ -67,21 +61,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <h2>Add Student Information</h2>
 
-<!-- Display errors -->
 <?php if (!empty($errors)): ?>
-    <ul style="color:red;">
+    <ul>
         <?php foreach ($errors as $error): ?>
             <li><?= htmlspecialchars($error) ?></li>
         <?php endforeach; ?>
     </ul>
 <?php endif; ?>
 
-<!-- Display success -->
 <?php if ($success): ?>
-    <p style="color:green;"><?= htmlspecialchars($success) ?></p>
+    <p><?= htmlspecialchars($success) ?></p>
 <?php endif; ?>
 
-<!-- 1. Student Form -->
 <form method="post">
     <label>Name:</label><br>
     <input type="text" name="name"><br><br>

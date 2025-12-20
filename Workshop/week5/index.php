@@ -1,6 +1,7 @@
  <?php include "includes/header.php"; ?>
     <main>
         <h1>Welcome to Student Portfolio Management</h1>
+        <br>
         <p>
             This system helps manage student records, portfolios, and uploaded documents.
         </p>

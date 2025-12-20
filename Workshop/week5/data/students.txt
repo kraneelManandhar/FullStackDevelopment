@@ -1,2 +1,5 @@
-Name: Kraneel, Email: adsfdgfg@gmail.com, Skills: HTML | CSS | JS | Java
-Name: Kraneel, Email: adsfdgfg@gmail.com, Skills: HTML | CSS | JS | Java
+Name: Manandhar, Email: np03cs4a240241@heraldcollege.edu.np, Skills: JAVA , PHP
+Name: Kraneel, Email: np03cs4a240241@heraldcollege.edu.np, Skills: JAVA
+Name: Manandhar, Email: mydarling3547@gmail.com, Skills: JAVA
+Name: Kraneel, Email: np03cs4a240241@heraldcollege.edu.np, Skills: JAVA
+Name: Kraneel Manandhar, Email: np03cs4a240241@heraldcollege.edu.np, Skills: JAVA , PHP , HTML , CSS , PHP
