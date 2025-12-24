@@ -14,7 +14,6 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['add_student'])){
         $email = $_POST['email'] ?? '';
         $course = $_POST['course'] ?? '';
         
-        // Basic validation
         if(empty($name) || empty($email) || empty($course)){
             echo "All fields are required!";
         } else {
@@ -35,12 +34,14 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['add_student'])){
 }
 ?>
 
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Student Database</title>
+    <link rel="stylesheet" href="../require/style.css">
 </head>
 <body>
 
