@@ -1,6 +1,6 @@
 <?php
 $host = "localhost";
-$dbname = "school_db";   // EXACT name from phpMyAdmin
+$dbname = "school_db";
 $username = "root";
 $password = "";
 
