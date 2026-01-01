@@ -1,5 +1,5 @@
 <?php
-    require 'style.css';
+    require 'preference.php';
     
     session_start();
     if(isset($_SESSION['logged_in'])){
