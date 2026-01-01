@@ -1,5 +1,6 @@
 <?php
 require 'db.php';
+require 'preference.php';
 
 if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['add_students'])){
 	$student_id = $_POST['student_id'] ?? "";
@@ -7,7 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['add_students'])){
 	$password = $_POST['password']  ?? "";
 	$tableName = "students";
 
-	// echo $password; 
 	$hashedpassword = password_hash($password, PASSWORD_BCRYPT);
 
 	$sql = "INSERT INTO $tableName (student_id,full_name,password_hash) Values(?,?,?)";
@@ -18,8 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['add_students'])){
 	header("Refresh:1, url = login.php");
 }catch(PDOException $e){
 	die("Unable to add student". $e -> getMessage());
-}
-	
+}	
 }
 ?>
 

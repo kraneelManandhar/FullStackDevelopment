@@ -1,5 +1,7 @@
 <?php
 	require 'db.php';
+	require 'preference.php';
+
 	if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['login'])) {
 	    $student_id = $_POST['student_id'];
 	    $password = $_POST['password'];
