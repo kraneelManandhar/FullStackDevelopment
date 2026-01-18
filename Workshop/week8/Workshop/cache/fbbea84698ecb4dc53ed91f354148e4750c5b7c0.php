@@ -1,0 +1,1 @@
+<h1>Test</h1><p>Hello <?php echo e($name); ?></p><?php /**PATH C:\xampp\htdocs\week8\Workshop\views/simple.blade.php ENDPATH**/ ?>
